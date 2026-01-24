@@ -1,73 +1,21 @@
-> [!IMPORTANT]
-> This template is **archived**.  
-> UV can now [generate a sample project](https://docs.astral.sh/uv/guides/projects/#creating-a-new-project)  
-> I recommend using **UV** to bootstrap your peojects.  
-> [Copier](https://github.com/copier-org/copier) is a tools that can bootstrap projects from templates.  
+# InspirationHarvester
 
-
----
-
-
-# Python Project Template
-
-A low dependency and really simple to start project template for Python Projects.
-
-See also 
-- [Flask-Project-Template](https://github.com/rochacbruno/flask-project-template/) for a full feature Flask project including database, API, admin interface, etc.
-- [FastAPI-Project-Template](https://github.com/rochacbruno/fastapi-project-template/) The base to start an openapi project featuring: SQLModel, Typer, FastAPI, JWT Token Auth, Interactive Shell, Management Commands.
-
-### HOW TO USE THIS TEMPLATE
-
-> **DO NOT FORK** this is meant to be used from **[Use this template](https://github.com/rochacbruno/python-project-template/generate)** feature.
-
-1. Click on **[Use this template](https://github.com/rochacbruno/python-project-template/generate)**
-3. Give a name to your project  
-   (e.g. `my_awesome_project` recommendation is to use all lowercase and underscores separation for repo names.)
-3. Wait until the first run of CI finishes  
-   (Github Actions will process the template and commit to your new repo)
-4. If you want [codecov](https://about.codecov.io/sign-up/) Reports and Automatic Release to [PyPI](https://pypi.org)  
-  On the new repository `settings->secrets` add your `PYPI_API_TOKEN` and `CODECOV_TOKEN` (get the tokens on respective websites)
-4. Read the file [CONTRIBUTING.md](CONTRIBUTING.md)
-5. Then clone your new project and happy coding!
-
-> **NOTE**: **WAIT** until first CI run on github actions before cloning your new project.
-
-### What is included on this template?
-
-- 🖼️ Templates for starting multiple application types:
-  * **Basic low dependency** Python program (default) [use this template](https://github.com/rochacbruno/python-project-template/generate)
-  * **Flask** with database, admin interface, restapi and authentication [use this template](https://github.com/rochacbruno/flask-project-template/generate).
-  **or Run `make init` after cloning to generate a new project based on a template.**
-- 📦 A basic [setup.py](setup.py) file to provide installation, packaging and distribution for your project.  
-  Template uses setuptools because it's the de-facto standard for Python packages, you can run `make switch-to-poetry` later if you want.
-- 🤖 A [Makefile](Makefile) with the most useful commands to install, test, lint, format and release your project.
-- 📃 Documentation structure using [mkdocs](http://www.mkdocs.org)
-- 💬 Auto generation of change log using **gitchangelog** to keep a HISTORY.md file automatically based on your commit history on every release.
-- 🐋 A simple [Containerfile](Containerfile) to build a container image for your project.  
-  `Containerfile` is a more open standard for building container images than Dockerfile, you can use buildah or docker with this file.
-- 🧪 Testing structure using [pytest](https://docs.pytest.org/en/latest/)
-- ✅ Code linting using [flake8](https://flake8.pycqa.org/en/latest/)
-- 📊 Code coverage reports using [codecov](https://about.codecov.io/sign-up/)
-- 🛳️ Automatic release to [PyPI](https://pypi.org) using [twine](https://twine.readthedocs.io/en/latest/) and github actions.
-- 🎯 Entry points to execute your program using `python -m <inspirationharvester>` or `$ inspirationharvester` with basic CLI argument parsing.
-- 🔄 Continuous integration using [Github Actions](.github/workflows/) with jobs to lint, test and release your project on Linux, Mac and Windows environments.
-
-> Curious about architectural decisions on this template? read [ABOUT_THIS_TEMPLATE.md](ABOUT_THIS_TEMPLATE.md)  
-> If you want to contribute to this template please open an [issue](https://github.com/rochacbruno/python-project-template/issues) or fork and send a PULL REQUEST.
-
-[❤️ Sponsor this project](https://github.com/sponsors/rochacbruno/)
-
-<!--  DELETE THE LINES ABOVE THIS AND WRITE YOUR PROJECT README BELOW -->
-
----
-# inspirationharvester
-
-[![codecov](https://codecov.io/gh/peterlau123/InspirationHarvester/branch/main/graph/badge.svg?token=InspirationHarvester_token_here)](https://codecov.io/gh/peterlau123/InspirationHarvester)
 [![CI](https://github.com/peterlau123/InspirationHarvester/actions/workflows/main.yml/badge.svg)](https://github.com/peterlau123/InspirationHarvester/actions/workflows/main.yml)
 
-Awesome inspirationharvester created by peterlau123
+A Python tool for scraping content from the internet to stimulate creation inspiration.
 
-## Install it from PyPI
+## Description
+
+InspirationHarvester is designed to collect and curate content from various online sources, providing developers, writers, artists, and creators with a steady stream of inspiration to fuel their creative processes.
+
+## Features
+
+- Scrape content from multiple sources
+- Filter and categorize harvested content
+- Export data in various formats
+- CLI interface for easy usage
+
+## Installation
 
 ```bash
 pip install inspirationharvester
@@ -75,20 +23,77 @@ pip install inspirationharvester
 
 ## Usage
 
-```py
-from inspirationharvester import BaseClass
-from inspirationharvester import base_function
-
-BaseClass().base_method()
-base_function()
-```
+### Command Line
 
 ```bash
-$ python -m inspirationharvester
-#or
-$ inspirationharvester
+# Run the harvester
+inspirationharvester
+
+# Or use as a module
+python -m inspirationharvester
+```
+
+### Python API
+
+```python
+from inspirationharvester import BaseClass, base_function
+
+# Use the main classes and functions
+harvester = BaseClass()
+harvester.base_method()
+base_function()
 ```
 
 ## Development
 
-Read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+### Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/peterlau123/InspirationHarvester.git
+   cd InspirationHarvester
+   ```
+
+2. Create a virtual environment and install dependencies:
+   ```bash
+   make virtualenv
+   source .venv/bin/activate
+   ```
+
+3. Install in development mode:
+   ```bash
+   make install
+   ```
+
+### Running Tests
+
+```bash
+make test
+```
+
+### Code Quality
+
+This project uses pre-commit hooks for code quality assurance:
+
+- **Black**: Code formatting
+- **isort**: Import sorting
+- **flake8**: Linting
+- **mypy**: Type checking
+
+Run all checks:
+```bash
+make lint
+```
+
+Format code:
+```bash
+make fmt
+```
+
+### Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

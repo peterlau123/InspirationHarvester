@@ -37,6 +37,10 @@ lint:             ## Run pep8, black, mypy linters.
 	$(ENV_PREFIX)black -l 79 --check tests/
 	$(ENV_PREFIX)mypy --ignore-missing-imports inspirationharvester/
 
+.PHONY: pre-commit
+pre-commit:       ## Run pre-commit hooks on all files.
+	$(ENV_PREFIX)pre-commit run --all-files
+
 .PHONY: test
 test: lint        ## Run tests and generate coverage report.
 	$(ENV_PREFIX)pytest -v --cov-config .coveragerc --cov=inspirationharvester -l --tb=short --maxfail=1 tests/
